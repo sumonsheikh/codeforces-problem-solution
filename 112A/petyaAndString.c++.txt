@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include<string.h>
+void lower_string (char []);
+int main(void) {
+	char inp1[100], inp2[100];
+	int result;
+	scanf("%s\n",inp1);
+	scanf("%s\n",inp2);
+	lower_string(inp1);
+	lower_string(inp2);
+	result = strcmp(inp1, inp2);
+	if(result==0){
+		printf("0\n");
+	}else if(result>0){
+		printf("1\n");
+	}else{
+		printf("-1\n");
+	}
+	
+	return 0;
+}
+void lower_string(char s[]){
+	int c =0;
+	while(s[c] != '\0'){
+		if(s[c]>='A' && s[c]<='Z'){
+			s[c] = s[c]+32;
+		}
+		c++;
+	}
+}
